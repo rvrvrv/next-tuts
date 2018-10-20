@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "next": "^7.0.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  },
+  "scripts": {
+    "start": "next"
+  },
+  "name": "art-site",
+  "version": "1.0.0",
+  "description": "Art Site (Next.js Tutorial)",
+  "main": "index.js",
+  "license": "MIT"
+}
