@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Head from 'next/head';
 
 export default ({ children, title = 'Art Gallery' }) => (
@@ -10,7 +9,7 @@ export default ({ children, title = 'Art Gallery' }) => (
     </Head>
     <div className="app">
       <header>
-        <h1><Link href={{ pathname: '/' }}><a>gallery</a></Link></h1>
+        <h1>gallery</h1>
         <h2>Interesting Artwork</h2>
       </header>
       { children }
@@ -58,7 +57,7 @@ export default ({ children, title = 'Art Gallery' }) => (
             user-select: none;
             margin-bottom: 3em;
           }
-          header h1 a {
+          header h1 {
             font-family: 'Changa', sans-serif;
             font-size: 30vw;
             line-height: .7;
