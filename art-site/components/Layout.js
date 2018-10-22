@@ -56,6 +56,7 @@ export default ({ children, title = 'Art Gallery' }) => (
           header {
             text-align: center;
             user-select: none;
+            margin-bottom: 3em;
           }
           header h1 a {
             font-family: 'Changa', sans-serif;
