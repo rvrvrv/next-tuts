@@ -27,7 +27,7 @@ export default ({ children, title = 'Art Gallery' }) => (
           @import url('https://fonts.googleapis.com/css?family=Dancing+Script');
           @import url('https://fonts.googleapis.com/css?family=Changa:800');
           @media screen {
-            * , *:after,*:before {
+            * , *:after, *:before {
               box-sizing: border-box;
             }
           }
@@ -54,15 +54,13 @@ export default ({ children, title = 'Art Gallery' }) => (
       <style jsx>
         {`
           header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
+            text-align: center;
             user-select: none;
           }
           header h1 a {
             font-family: 'Changa', sans-serif;
             font-size: 30vw;
+            line-height: .7;
             color: var(--bg);
             text-shadow: var(--blue) 0 0 50px;
             letter-spacing: -15px;
@@ -70,15 +68,15 @@ export default ({ children, title = 'Art Gallery' }) => (
             text-decoration: none;
           }
           h2 {
-            font-size: 6vw;
+            font-size: 5vw;
             color: var(--white);
             text-shadow: none;
             letter-spacing: normal;
             font-weight: normal;
             font-family: 'Dancing Script', cursive;
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 12%;
+            left: 45%;
           }
           footer {
             clear: both;
