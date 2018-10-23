@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default props => (
   <div className="photoComponent">
-    <div style={{ flex: '1 0 auto' }}>
+    <div>
       <Link href={{ pathname: '/photo', query: { id: props.id } }}>
         <img src={`/static/art/${props.data.image}.jpg`} alt="" />
       </Link>
@@ -13,24 +13,21 @@ export default props => (
     <style>
       {`
         .photoComponent {
-          display: flex;
-          flex-direction: column;
-          width: 29%;
-          float: left;
+          max-width: 400px;
           margin: 2%;
           background: var(--white);
           color: var(--bg);
           box-shadow: 0 1em 2em #002;
-          overflow: auto;
+          overflow: hidden;
           text-align: center;
           font-weight: bold;
         }
         img {
           width: 80%;
-          margin: 10%;
+          margin: 10% auto 2%;
         }
         .title {
-          margin-bottom: 10px;
+          margin-bottom: .8em;
         }
       `}
     </style>
