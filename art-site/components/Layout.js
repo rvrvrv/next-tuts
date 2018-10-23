@@ -12,7 +12,9 @@ export default ({ children, title = 'Art Gallery' }) => (
         <h1>gallery</h1>
         <h2>Interesting Artwork</h2>
       </header>
-      { children }
+      <div className="gallery">
+        { children }
+      </div>
       <footer />
       <style global jsx>
         {`
@@ -47,6 +49,12 @@ export default ({ children, title = 'Art Gallery' }) => (
             width: 100%;
             margin: auto;
             overflow-x: hidden;
+          }
+          .gallery {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;            
           }
       `}
       </style>
