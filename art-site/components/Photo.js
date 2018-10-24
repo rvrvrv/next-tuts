@@ -25,6 +25,7 @@ export default props => (
         img {
           width: 80%;
           margin: 10% auto 2%;
+          cursor: pointer;
         }
         .title {
           margin-bottom: .8em;
