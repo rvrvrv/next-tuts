@@ -5,7 +5,7 @@ import getPhotos from '../data/data';
 const Index = props => (
   <Layout>
     {
-      props.images.map((image, i) => <Photo id={i} data={image} key={i} />)
+      props.images.map((image, i) => <Photo id={i+1} data={image} key={i} />)
     }
   </Layout>
 );
