@@ -21,9 +21,9 @@ export default ({ children, title = 'Art Gallery' }) => (
           :root {
             --bg: #182952;
             --blue: #2b3595;
-            --green: #65C5D9; 
-            --white: #F4F5F7;
-            --light-gray: #EAEEEF;
+            --green: #65c5d9; 
+            --white: #f4f5f7;
+            --light-gray: #ddf;
           }
           @import url('https://fonts.googleapis.com/css?family=Dancing+Script');
           @import url('https://fonts.googleapis.com/css?family=Changa:800');
