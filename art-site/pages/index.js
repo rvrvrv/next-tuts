@@ -1,16 +1,27 @@
+import React, { Component } from 'react';
+import fetch from 'isomorphic-unfetch';
 import Layout from '../components/Layout';
 import Photo from '../components/Photo';
-import getPhotos from '../data/data';
 
-const Index = props => (
-  <Layout>
-    {
-      props.images.map((image, i) => <Photo id={i+1} data={image} key={i} />)
-    }
-  </Layout>
-);
+export default class extends Component {
+  static async getInitialProps() {
+    const images = await (await fetch('http://localhost:4000/photos')).json();
+    return { images };
+  }
 
-// Retrieve sample data (JSON)
-Index.getInitialProps = async () => ({ images: getPhotos() });
+  componentWillMount() {
+    this.setState({
+      images: this.props.images
+    });
+  }
 
-export default Index;
+  render() {
+    return (
+      <Layout>
+        {
+          this.state.images.map((image, i) => <Photo id={i + 1} data={image} key={i} />)
+        }
+      </Layout>
+    );
+  }
+}
