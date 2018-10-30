@@ -54,17 +54,19 @@ export default class extends Component {
           </div>
           <div className="comments">
             <p className="title">{this.state.image.title}</p>
-            {
-            this.state.image.comments.map((comment, i) => (
-              <p key={i}>
-                <strong>
-                  {comment.user}
-:
-                </strong>
-                {comment.body}
-              </p>
-            ))
-          }
+            <div className="comments-inner">
+              {
+              this.state.image.comments.map((comment, i) => (
+                <p key={i}>
+                  <strong>
+                    {comment.user}
+  :
+                  </strong>
+                  {comment.body}
+                </p>
+              ))
+              }
+            </div>
             <form
               className="comment-form"
               onSubmit={e => this.submitComment(e)}
@@ -77,19 +79,51 @@ export default class extends Component {
         </div>
         <style>
           {`
+          .display_image {
+            width: 50%;
+          }
+          .display_image img {
+            width: 100%; 
+            display: block
+          }
+          .container {
+            display: flex;
+            width: 100%;
+            background: var(--white);
+            color: var(--bg);
+            box-shadow: 1em 1.5em 4em -2em rgba(0,0,0,1);
+          }
+          .comments {
+            position: relative;
+            width: 50%;
+            padding: 0 30px;
+            display: flex;
+            flex-direction: column;
+          }
+          .comments p {
+            margin: 10px 0;
+          }
+          .comments strong {
+            display: block;
+          }
+          .comments .title {
+            border-bottom: 1px solid var(--bg);
+            font-size: 1.3em;
+            padding-bottom: 10px;
+            color: var(--blue);
+          }
+          .comments-inner {
+            flex-grow: 1;
+            overflow-y: auto;
+          }
           form {
-            padding: 5px;
+            padding: 5px 0;
             background: var(--white);
             border-top: 1px solid var(--light-gray);
-            overflow: auto;
-            position: absolute;
-            width: 100%;
-            left: 0;
-            bottom: 0;
           }
           form input {
-            padding: 9px 3px;
-            width: 90%;
+            padding: 9px 5px;
+            width: 100%;
             margin: 5px auto;
             display: block;
             background-color: var(--blue);
@@ -100,50 +134,15 @@ export default class extends Component {
           form input::placeholder {
             color: var(--light-gray);
           }
-          form a {
-            text-decoration: none;
-            margin-top: 5px;
-            float: left;
-            width: 50%;
-            text-align: center;
-            padding: 9px 0;
-            margin-top: 10px;
-            color: var(--white);
+          form input[type="submit"] {
+            cursor: pointer;
+            transition: background-color .2s;
           }
-          .title {
-            border-bottom: 1px solid var(--bg);
-            font-size: 1.3em;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            display: inline-block;
-            color: var(--blue);
+          form input[type="submit"]:hover {
+            background-color: var(--bg);
           }
-          .comments{
-            padding: 30px;
-          }
-          .comments p {
-            margin: 10px 0;
-          }
-          .comments strong {
-            display: block;
-          }
-          .display_image{
-            width: 50%;
-          }
-          .display_image img {
-            width: 100%; 
-            display: block
-          }
-          .comments {
-            position: relative;
-            width: 50%;
-          }
-          .container {
-            display: flex;
-            width: 100%;
-            background: var(--white);
-            color: var(--bg);
-            box-shadow: 1em 1.5em 4em -2em rgba(0,0,0,1);
+          form input[type="submit"]:active {
+            background-color: black;
           }
         `}
         </style>
